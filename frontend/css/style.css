@@ -1,0 +1,455 @@
+/* frontend/css/style.css - New Theme: Soft & Comfortable */
+
+:root {
+  /* Main Theme Colors */
+  --primary-bg: #edeae6; /* Greige: Abu-abu sangat terang yang hangat */
+  --card-bg: #f9f8f5; /* Krem sangat terang, sedikit lebih putih untuk kartu */
+  --text-dark: #4f4f4f; /* Abu-abu gelap lembut untuk teks utama */
+  --text-light: #f0f0f0; /* Off-white untuk teks pada elemen gelap */
+  --border-color: #dcdcdc; /* Abu-abu terang sangat halus untuk border */
+
+  /* Accent & Semantic Colors */
+  --accent-color: #7a9e9f; /* Muted Teal/Sage sebagai warna aksen */
+  --accent-color-hover: #6a8b8c; /* Teal lebih gelap saat hover */
+  --accent-color-focus-ring: rgba(
+    122,
+    158,
+    159,
+    0.4
+  ); /* Teal dengan opacity untuk focus ring */
+
+  --positive-color: #75b495; /* Muted Sage Green untuk sentimen positif */
+  --negative-color: #b57b7b; /* Muted Rose/Brick Red untuk sentimen negatif */
+
+  /* Shadow Colors */
+  --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.05); /* Opasitas bayangan dikurangi */
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.08); /* Opasitas bayangan dikurangi */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-bg); /* Latar belakang utama */
+  color: var(--text-dark); /* Teks utama */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+
+.container {
+  background-color: var(--card-bg); /* Latar belakang container/card */
+  border-radius: 20px;
+  box-shadow: var(--shadow-light);
+  padding: 45px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 3.5em;
+  color: var(--accent-color); /* Judul utama menggunakan warna aksen baru */
+  margin-bottom: 12px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+header h1 .fas.fa-film {
+  font-size: 0.9em;
+  color: #f39c12; /* Ikon film (kuning oranye) - bisa disesuaikan jika ingin lebih serasi */
+  transform: rotate(-15deg);
+}
+
+header p {
+  font-size: 1.2em;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: var(--shadow-light);
+  padding: 35px;
+  margin-bottom: 35px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+}
+
+.input-section label {
+  display: block;
+  text-align: left;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.15em;
+  color: var(--text-dark);
+}
+
+textarea {
+  width: calc(100% - 30px);
+  padding: 15px;
+  margin-bottom: 25px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1.05em;
+  resize: vertical;
+  min-height: 180px;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--card-bg);
+}
+
+textarea:focus {
+  border-color: var(
+    --accent-color
+  ); /* Border focus menggunakan warna aksen baru */
+  box-shadow: 0 0 0 4px var(--accent-color-focus-ring);
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.15em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  flex-grow: 1;
+  max-width: 280px;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn:disabled {
+  background-color: #a0a0a0 !important;
+  color: var(--text-light);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.9;
+}
+
+.primary-btn {
+  background-color: var(
+    --accent-color
+  ); /* Tombol utama menggunakan warna aksen baru */
+  color: var(--text-light);
+}
+
+.primary-btn:hover {
+  background-color: var(
+    --accent-color-hover
+  ); /* Aksen lebih gelap saat hover */
+}
+
+.secondary-btn {
+  background-color: var(--primary-bg);
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+  background-color: #ccc4bb; /* Krem lebih gelap saat hover */
+}
+
+/* Example Reviews Section */
+.example-reviews {
+  text-align: left;
+  margin-top: 30px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 25px;
+}
+.example-reviews h3 {
+  font-size: 1.1em;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.example-reviews ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.example-reviews li {
+  background-color: #ebe7e4; /* Krem sedikit lebih gelap dari primary_bg */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-size: 0.95em;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+.example-reviews li:hover {
+  background-color: #d8d0ca; /* Krem lebih gelap saat hover */
+  transform: translateY(-2px);
+}
+.example-reviews li:active {
+  transform: translateY(0);
+}
+
+.result-section h2 {
+  font-size: 2.5em;
+  color: var(--accent-color); /* Judul hasil menggunakan warna aksen baru */
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.sentiment-box {
+  background-color: #fcf8f3; /* Latar belakang sentiment box default */
+  padding: 40px;
+  border-radius: 15px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  transition: background-color 0.5s ease, transform 0.3s ease,
+    border-color 0.5s ease;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 2px solid var(--border-color);
+  position: relative;
+}
+
+/* Style spesifik untuk sentimen */
+.sentiment-box.positive {
+  background-color: #eaf7f2; /* Hijau sangat terang (sesuaikan dengan positive-color) */
+  border-color: var(--positive-color);
+}
+.sentiment-box.positive .sentiment-label {
+  color: var(--positive-color); /* Hijau */
+}
+.sentiment-box.negative {
+  background-color: #fdeded; /* Merah sangat terang (sesuaikan dengan negative-color) */
+  border-color: var(--negative-color);
+}
+.sentiment-box.negative .sentiment-label {
+  color: var(--negative-color); /* Merah */
+}
+
+.sentiment-label {
+  font-size: 3em;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--text-dark);
+}
+.sentiment-label i {
+  font-size: 1.2em;
+}
+
+.confidence-score {
+  font-size: 1.4em;
+  color: #7f8c8d;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Confidence Progress Bar */
+.confidence-bar-container {
+  width: 80%;
+  background-color: #ebe7e4;
+  border-radius: 10px;
+  height: 15px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.confidence-bar {
+  height: 100%;
+  width: 0%;
+  background-color: var(
+    --accent-color
+  ); /* Default bar menggunakan warna aksen baru */
+  border-radius: 10px;
+  transition: width 0.8s ease-in-out, background-color 0.8s ease-in-out;
+}
+
+/* Warna progress bar berdasarkan sentimen */
+.sentiment-box.positive .confidence-bar {
+  background-color: var(--positive-color);
+}
+.sentiment-box.negative .confidence-bar {
+  background-color: var(--negative-color);
+}
+
+/* Sentiment Icon (Large Icon Below Result) */
+.sentiment-icon {
+  font-size: 4em;
+  margin-top: 25px;
+  transition: color 0.5s ease;
+  color: var(--text-dark);
+}
+.sentiment-box.positive .sentiment-icon {
+  color: var(--positive-color);
+}
+.sentiment-box.negative .sentiment-icon {
+  color: var(--negative-color);
+}
+
+.loading-indicator {
+  display: none;
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.spinner {
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(
+    --accent-color
+  ); /* Spinner menggunakan warna aksen baru */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-indicator p {
+  font-size: 1.3em;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+footer {
+  margin-top: 60px;
+  font-size: 1em;
+  color: #7f8c8d;
+  font-weight: 300;
+}
+
+/* Responsive adjustments (tetap sama) */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+  header h1 {
+    font-size: 2.8em;
+  }
+  header p {
+    font-size: 1.05em;
+  }
+  .card {
+    padding: 25px;
+  }
+  .btn {
+    font-size: 1.05em;
+    padding: 12px 25px;
+  }
+  .sentiment-label {
+    font-size: 2.2em;
+    gap: 10px;
+  }
+  .sentiment-label i {
+    font-size: 1em;
+  }
+  .confidence-score {
+    font-size: 1.2em;
+  }
+  .sentiment-icon {
+    font-size: 3em;
+  }
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .btn {
+    max-width: 100%;
+  }
+  .example-reviews ul {
+    flex-direction: column;
+  }
+  .example-reviews li {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+  .sentiment-label {
+    font-size: 1.8em;
+  }
+  .confidence-score {
+    font-size: 1em;
+  }
+  .sentiment-icon {
+    font-size: 2.5em;
+  }
+  .container {
+    padding: 20px;
+  }
+}

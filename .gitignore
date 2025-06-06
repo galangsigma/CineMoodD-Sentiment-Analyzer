@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+
+# Vercel (local cache)
+.vercel/
+
+# IDEs and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineMood - Movie Sentiment Analysis</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>CineMood <i class="fas fa-film"></i></h1>
+        <p>Automatic sentiment analysis for English movie reviews.</p>
+      </header>
+
+      <main>
+        <div class="input-section card">
+          <label for="reviewText">Enter your movie review here:</label>
+          <textarea
+            id="reviewText"
+            placeholder="Example: 'This movie was absolutely brilliant! The acting was superb and the story kept me on the edge of my seat.'"
+            rows="8"
+          ></textarea>
+          <div class="button-group">
+            <button id="analyzeButton" class="btn primary-btn">
+              <i class="fas fa-search"></i> Analyze Sentiment
+            </button>
+            <button id="clearButton" class="btn secondary-btn">
+              <i class="fas fa-times"></i> Clear Text
+            </button>
+          </div>
+
+          <div class="example-reviews">
+            <h3>Try Example Reviews:</h3>
+            <ul>
+              <li
+                data-review="This movie was an absolute masterpiece! The acting, the plot, the direction, everything was just perfect. I cried, I laughed, it made me feel everything."
+              >
+                🎬 Very Positive Review
+              </li>
+              <li
+                data-review="The cinematography was breathtaking and the soundtrack was just perfect for the mood of the film. A truly immersive experience."
+              >
+                ✨ Positive Review
+              </li>
+              <li
+                data-review="I had really high hopes for this one but it turned out to be incredibly boring and confusing. I couldn't connect with any of the characters."
+              >
+                😴 Negative Review
+              </li>
+              <li
+                data-review="Complete garbage. The plot was nonsensical, the acting was wooden, and I wished I had never wasted my time watching it. Avoid at all costs."
+              >
+                🗑️ Very Negative Review
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="result-section card" id="resultSection">
+          <h2>Analysis Result:</h2>
+          <div class="sentiment-box" id="sentimentBox">
+            <p class="sentiment-label" id="sentimentResult">
+              Sentiment will appear here.
+            </p>
+            <p class="confidence-score" id="confidenceScore">
+              Confidence Score: -
+            </p>
+            <div class="confidence-bar-container">
+              <div class="confidence-bar" id="confidenceProgressBar"></div>
+            </div>
+            <div class="sentiment-icon" id="sentimentIcon"></div>
+          </div>
+          <div class="loading-indicator" id="loadingIndicator">
+            <div class="spinner"></div>
+            <p>Analyzing...</p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 CineMood. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
