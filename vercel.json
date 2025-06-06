@@ -5,12 +5,10 @@
       "src": "backend/app.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "15mb", // Sesuaikan jika model Anda lebih besar
-        "runtime": "python3.9"   // Pastikan versi Python ini tersedia di Vercel
-                                 // dan cocok dengan lingkungan Anda jika memungkinkan (e.g., python3.10)
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.9"
       }
     }
-    // Tidak perlu mendefinisikan build untuk file statis jika "rootDirectory" diatur
   ],
   "routes": [
     {
@@ -19,12 +17,8 @@
     },
     {
       "src": "/(.*)",
-      "dest": "frontend/$1" // Ini akan melayani semua file dari folder frontend
-                            // Termasuk index.html, css/, js/
+      "dest": "frontend/$1"
     }
   ],
-  "installCommand": "pip install -r backend/requirements.txt",
-  "installCommand": "pip install -r backend/requirements.txt --no-deps", # Bisa pakai ini untuk mencegah build ulang deps yang sudah ada
-  "devCommand": "python backend/app.py", // Untuk pengembangan lokal dengan `vercel dev`
-  "rootDirectory": "frontend" // <--- PENTING: Atur root deployment untuk frontend Anda
+  "installCommand": "pip install -r backend/requirements.txt"
 }
